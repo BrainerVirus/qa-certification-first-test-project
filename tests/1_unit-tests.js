@@ -4,7 +4,7 @@ const ConvertHandler = require("../controllers/convertHandler.js");
 
 const convertHandler = new ConvertHandler();
 
-suite("#Unit Tests", function () {
+suite("###Unit Tests###", function () {
   suite("#getNum(input)", function () {
     test("Whole number input", function () {
       const input = "32L";
@@ -53,7 +53,7 @@ suite("#Unit Tests", function () {
       assert.equal(convertHandler.getUnit(input), "invalid unit");
     });
   });
-  suite("#getRetrunUnit()", function () {
+  suite("#getReturnUnit()", function () {
     test("Return unit for each unit", function () {
       const input = ["gal", "L", "mi", "km", "lbs", "kg"];
       const expect = ["L", "gal", "km", "mi", "kg", "lbs"];

@@ -10,7 +10,7 @@ function ConvertHandler() {
       if (fraction.length > 2) return "invalid number";
       if (!regex.test(fraction[0]) || !regex.test(fraction[1]))
         return "invalid number";
-      return fraction[0] / fraction[1];
+      return parseFloat((fraction[0] / fraction[1]).toFixed(5));
     }
     if (!regex.test(result)) return "invalid number";
     return result;
@@ -84,18 +84,17 @@ function ConvertHandler() {
     const unit = initUnit.toLowerCase();
     switch (initUnit) {
       case "gal":
-        console.log("retrun in gal: ", (number * galToL).toFixed(5));
-        return (number * galToL).toFixed(5);
+        return parseFloat((number * galToL).toFixed(5));
       case "L":
-        return (number / galToL).toFixed(5);
+        return parseFloat((number / galToL).toFixed(5));
       case "lbs":
-        return (number * lbsToKg).toFixed(5);
+        return parseFloat((number * lbsToKg).toFixed(5));
       case "kg":
-        return (number / lbsToKg).toFixed(5);
+        return parseFloat((number / lbsToKg).toFixed(5));
       case "mi":
-        return (number * miToKm).toFixed(5);
+        return parseFloat((number * miToKm).toFixed(5));
       case "km":
-        return (number / miToKm).toFixed(5);
+        return parseFloat((number / miToKm).toFixed(5));
       default:
         return "invalid unit";
     }
